@@ -2,403 +2,173 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Mohit Johri | Software Engineer Portfolio</title>
-    <!-- Tailwind CSS v3 + Font Awesome Icons + Google Fonts (Inter) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React & ReactDOM (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
-    <!-- Babel for JSX (in-browser compilation for development) -->
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
-    <!-- Font Awesome 6 Free CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Johri | Software Developer Portfolio</title>
     <style>
-        /* smooth scroll and subtle custom animations */
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary-blue: #2563eb;
+            --dark-bg: #1e293b;
+            --text-gray: #475569;
+            --light-gray: #f8fafc;
         }
+
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        .card-hover {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.25);
-        }
-        .skill-badge {
-            transition: all 0.2s;
-        }
-        .skill-badge:hover {
-            transform: scale(1.05);
-            background-color: #3b82f6;
+
+        header {
+            background-color: var(--dark-bg);
             color: white;
+            padding: 4rem 2rem;
+            text-align: center;
         }
-        .hero-blob {
-            background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.15), transparent 70%);
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        .nav-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
+
+        .section-title {
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            color: var(--dark-bg);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 10px;
+
+        .skill-tag {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .experience-card, .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .date {
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-bg);
+            color: white;
+            margin-top: 3rem;
         }
     </style>
 </head>
-<body class="bg-slate-900 text-gray-200">
+<body>
 
-<!-- React root mount point -->
-<div id="root"></div>
+<header>
+    <h1>Mohit Johri</h1>
+    <p>Software Engineer | Full Stack Developer | AI/ML Enthusiast</p>
+    <div class="nav-links">
+        <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="mailto:email@example.com">Contact</a>
+    </div>
+</header>
 
-<script type="text/babel">
-    // Functional components using React (via Babel)
-    const { useState, useEffect } = React;
+<div class="container">
+    <section id="about">
+        <h2 class="section-title">Professional Summary</h2>
+        <p>
+            Software Engineer with a solid understanding of <strong>Java, Python, and JavaScript</strong>[cite: 3]. 
+            Currently leveraging strong problem-solving skills in full-stack development and AI/ML to contribute to 
+            innovative projects[cite: 3]. Active Java Full Stack trainee at J-Spiders[cite: 4].
+        </p>
+    </section>
 
-    // Navigation Component
-    const Navigation = () => {
-        const [isMenuOpen, setIsMenuOpen] = useState(false);
-        const navItems = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div>
+            <span class="skill-tag">Java (Spring Boot)</span>
+            <span class="skill-tag">Python (Pandas, NumPy, Scikit-learn)</span>
+            <span class="skill-tag">SQL & MongoDB</span>
+            <span class="skill-tag">JavaScript, HTML, CSS</span>
+            <span class="skill-tag">Spring JPA & Hibernate</span>
+            <span class="skill-tag">Linux/Ubuntu Server</span>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
         
-        return (
-            <nav className="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700 shadow-lg">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
-                    <a href="#" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">Mohit Johri</a>
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-8 text-gray-300 font-medium">
-                        {navItems.map(item => (
-                            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-blue-400 transition duration-300">{item}</a>
-                        ))}
-                        <a href="#contact" className="bg-blue-600 hover:bg-blue-500 px-4 py-1 rounded-full transition">Resume</a>
-                    </div>
-                    {/* Mobile Hamburger */}
-                    <div className="md:hidden">
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-300 text-2xl focus:outline-none">
-                            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-                        </button>
-                    </div>
-                </div>
-                {/* Mobile Dropdown */}
-                {isMenuOpen && (
-                    <div className="md:hidden bg-slate-800 border-t border-slate-700 py-4 px-6 flex flex-col space-y-4">
-                        {navItems.map(item => (
-                            <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="hover:text-blue-400 transition">{item}</a>
-                        ))}
-                        <a href="#contact" onClick={() => setIsMenuOpen(false)} className="bg-blue-600 text-center py-2 rounded-full">Contact</a>
-                    </div>
-                )}
-            </nav>
-        );
-    };
+        <div class="experience-card">
+            <span class="date">Nov 2025 - Present</span>
+            <h3>Software Developer | UKB Electronics Pvt. Ltd.</h3>
+            <ul>
+                <li>Developed <strong>DWM (Daily Work Management)</strong> application using Spring Boot, JPA, and Thymeleaf[cite: 7].</li>
+                <li>Implemented admin/standard user controls, task calendars, and adherence calculations[cite: 7].</li>
+                <li>Deployed applications on Linux Ubuntu Server using CLI[cite: 7].</li>
+            </ul>
+        </div>
 
-    // Hero Section
-    const Hero = () => (
-        <section id="about" className="pt-32 pb-20 px-6 md:px-10 max-w-7xl mx-auto relative hero-blob">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-                <div className="flex-1 space-y-5">
-                    <div className="inline-block px-4 py-1 bg-blue-500/20 rounded-full text-blue-300 text-sm font-semibold backdrop-blur-sm">
-                        <i className="fas fa-code mr-2"></i>Software Engineer
-                    </div>
-                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-                        Mohit <span className="text-blue-400">Johri</span>
-                    </h1>
-                    <p className="text-xl text-gray-300 max-w-xl">
-                        Java Full-Stack Developer | AI/ML Enthusiast | Spring Boot · React · Python
-                    </p>
-                    <div className="flex flex-wrap gap-4 pt-2">
-                        <a href="#contact" className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-full font-semibold transition shadow-lg flex items-center gap-2">
-                            <i className="fas fa-paper-plane"></i> Hire Me
-                        </a>
-                        <a href="#projects" className="border border-blue-500 hover:bg-blue-500/20 px-6 py-3 rounded-full font-semibold transition flex items-center gap-2">
-                            <i className="fas fa-laptop-code"></i> View Work
-                        </a>
-                    </div>
-                    <div className="flex gap-5 text-gray-400 pt-4">
-                        <a href="#" className="hover:text-blue-400 text-xl"><i className="fab fa-github"></i></a>
-                        <a href="#" className="hover:text-blue-400 text-xl"><i className="fab fa-linkedin"></i></a>
-                        <a href="#" className="hover:text-blue-400 text-xl"><i className="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div className="flex-1 flex justify-center">
-                    <div className="w-64 h-64 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center shadow-2xl ring-4 ring-blue-400/30">
-                        <span className="text-7xl font-bold text-white drop-shadow-md">MJ</span>
-                    </div>
-                </div>
+        <div class="experience-card">
+            <span class="date">July 2025 - Oct 2025</span>
+            <h3>Java Full Stack Developer | ACPL Products & Jewelry LLP</h3>
+            <ul>
+                <li>Integrated front-end components into Java applications[cite: 9].</li>
+                <li>Designed web reports for ERP Web Applications using HTML/CSS/JS[cite: 10].</li>
+                <li>Optimized SQL queries for Oracle Database[cite: 12].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">AI & ML Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>NLP for Customer Support</h3>
+                <p>Implemented a <strong>Recurrent Neural Network (RNN)</strong> to automate customer interactions through sentiment analysis and intent recognition[cite: 26, 27].</p>
             </div>
-        </section>
-    );
-
-    // Experience Component
-    const Experience = () => {
-        const experiences = [
-            {
-                title: "Software Developer",
-                company: "UKB Electronics Pvt. Ltd., Noida",
-                period: "Nov 2025 - Present",
-                details: [
-                    "Designed & developed DWM (Daily Work Management) App using Java Spring, JPA, Hibernate, Thymeleaf.",
-                    "Created user roles (Admin/Standard), Monthly Task Calendar with adherence tracking, Maker-Checker workflow.",
-                    "Deployed on Linux Ubuntu Server (CLI) with MySQL, debugged backend-frontend integrations."
-                ],
-                icon: "fa-building"
-            },
-            {
-                title: "Java Full Stack Developer",
-                company: "ACPL Products & Jewelry LLP, Noida",
-                period: "July 2025 - Oct 2025",
-                details: [
-                    "Integrated frontend components (HTML, CSS, JS) into ERP web application.",
-                    "Developed dynamic web reports, optimized SQL queries on Oracle DB.",
-                    "Enhanced debugging of backend services and client-side integration."
-                ],
-                icon: "fa-chart-line"
-            },
-            {
-                title: "Software Developer Intern",
-                company: "UKB Electronics Pvt. Ltd., Noida",
-                period: "Apr 2024 - Sep 2024",
-                details: [
-                    "Built Barcode Reader Application with Spring Boot, integrated with SAP S4/Hana via APIs/BAPIs.",
-                    "Enabled seamless production order retrieval, barcode-based stock management & inventory counting.",
-                    "Streamlined data entry and improved production cycle accuracy."
-                ],
-                icon: "fa-microchip"
-            }
-        ];
-
-        return (
-            <section id="experience" className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold inline-block bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Work Experience</h2>
-                    <div className="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-                </div>
-                <div className="relative border-l-4 border-blue-500/60 ml-4 md:ml-8 space-y-10">
-                    {experiences.map((exp, idx) => (
-                        <div key={idx} className="relative pl-8 md:pl-12 group">
-                            <div className="absolute -left-[2.15rem] md:-left-[2.4rem] top-1 bg-slate-800 rounded-full p-2 border-2 border-blue-500">
-                                <i className={`fas ${exp.icon} text-blue-400 text-sm md:text-base`}></i>
-                            </div>
-                            <div className="bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-700 card-hover">
-                                <div className="flex flex-wrap justify-between items-start gap-2">
-                                    <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
-                                    <span className="bg-blue-900/40 text-blue-300 px-4 py-1 rounded-full text-sm font-mono">{exp.period}</span>
-                                </div>
-                                <p className="text-blue-300 font-medium mt-1 flex items-center gap-2"><i className="fas fa-map-marker-alt"></i> {exp.company}</p>
-                                <ul className="mt-4 space-y-2 text-gray-300 list-disc list-inside">
-                                    {exp.details.map((point, i) => (
-                                        <li key={i} className="text-sm md:text-base leading-relaxed">{point}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        );
-    };
-
-    // Projects Section (with AI/ML focus)
-    const Projects = () => {
-        const projectsList = [
-            {
-                title: "NLP for Automated Customer Support",
-                tech: "Python · RNN · TensorFlow · NLTK",
-                desc: "Built an RNN-based AI model for intent recognition & sentiment analysis to automate customer support interactions, improving response efficiency.",
-                icon: "fa-comment-dots",
-                gradient: "from-purple-600 to-indigo-600"
-            },
-            {
-                title: "AI Real-Time Object Detection",
-                tech: "YOLO · PyTorch · OpenCV · TensorFlow",
-                desc: "Developed real-time object detection system using YOLO deep learning, optimized for live webcam streams, bounding box visualization.",
-                icon: "fa-video",
-                gradient: "from-blue-600 to-cyan-600"
-            },
-            {
-                title: "DWM - Daily Work Management",
-                tech: "Java · Spring Boot · Thymeleaf · MySQL",
-                desc: "Enterprise grade task management with adherence metrics, maker-checker roles, deployed on Ubuntu Server, improved team productivity.",
-                icon: "fa-tasks",
-                gradient: "from-emerald-600 to-teal-600"
-            },
-            {
-                title: "Barcode Reader & SAP Integration",
-                tech: "Spring Boot · SAP S4/Hana · REST APIs · JPA",
-                desc: "Integrated barcode scanning system with SAP, enabling production order retrieval & inventory count, reducing manual errors by 35%.",
-                icon: "fa-barcode",
-                gradient: "from-amber-600 to-orange-600"
-            }
-        ];
-        return (
-            <section id="projects" className="py-20 px-6 md:px-10 max-w-7xl mx-auto bg-slate-800/30 rounded-3xl my-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">Featured Projects</h2>
-                    <p className="text-gray-400 mt-3">AI/ML · Full Stack · Real-world impact</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projectsList.map((project, idx) => (
-                        <div key={idx} className="bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-xl card-hover transition-all">
-                            <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
-                            <div className="p-6">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="bg-slate-800 p-3 rounded-xl text-blue-400">
-                                        <i className={`fas ${project.icon} text-2xl`}></i>
-                                    </div>
-                                    <h3 className="text-2xl font-bold">{project.title}</h3>
-                                </div>
-                                <p className="text-gray-300 mb-4 leading-relaxed">{project.desc}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech.split(" · ").map((skill, i) => (
-                                        <span key={i} className="text-xs font-mono bg-slate-800 text-cyan-300 px-3 py-1 rounded-full">{skill}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                {/* Training note */}
-                <div className="mt-12 text-center bg-slate-800/50 p-5 rounded-2xl border border-slate-600">
-                    <i className="fas fa-graduation-cap text-blue-400 text-xl mr-2"></i>
-                    <span className="font-medium">Currently enhancing skills: <span className="text-blue-300">Java Full Stack Training at J-Spiders</span> (Spring Boot, Microservices, React)</span>
-                </div>
-            </section>
-        );
-    };
-
-    // Skills Summary
-    const Skills = () => {
-        const skillCategories = [
-            { name: "Backend & Core", skills: ["Java (Spring Boot)", "Python", "JPA/Hibernate", "Maven", "REST APIs"] },
-            { name: "Frontend & UI", skills: ["HTML5", "CSS3", "JavaScript", "Thymeleaf", "Tailwind CSS", "React.js"] },
-            { name: "Databases & Tools", skills: ["MySQL", "Oracle SQL", "MongoDB", "Git", "Linux/Ubuntu CLI"] },
-            { name: "AI/ML & Data", skills: ["scikit-learn", "Pandas", "NumPy", "Seaborn", "TensorFlow/PyTorch", "YOLO"] }
-        ];
-        const allTools = ["Spring Boot", "Python", "JavaScript", "React", "Tailwind", "MySQL", "MongoDB", "TensorFlow", "OpenCV", "REST", "Git", "JPA"];
-
-        return (
-            <section id="skills" className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-300 bg-clip-text text-transparent">Technical Arsenal</h2>
-                    <div className="w-20 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-10">
-                    {skillCategories.map((cat, idx) => (
-                        <div key={idx} className="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 backdrop-blur-sm">
-                            <h3 className="text-2xl font-semibold mb-5 text-blue-300 border-b border-slate-600 pb-2">{cat.name}</h3>
-                            <div className="flex flex-wrap gap-3">
-                                {cat.skills.map((skill, i) => (
-                                    <span key={i} className="skill-badge cursor-default bg-slate-700 px-4 py-2 rounded-full text-sm font-medium text-gray-200 shadow-md">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-12 bg-gradient-to-r from-blue-900/30 to-indigo-900/30 rounded-2xl p-6 text-center">
-                    <p className="text-lg font-medium"><i className="fas fa-code-branch mr-2 text-blue-400"></i>Other expertise: RDBMS design, Agile methodologies, Debugging, Deployment (Ubuntu CLI), SAP Integration</p>
-                </div>
-            </section>
-        );
-    };
-
-    // Education & Contact combined
-    const Contact = () => {
-        return (
-            <section id="contact" className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-12">
-                    {/* Education Card */}
-                    <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 shadow-xl">
-                        <div className="flex items-center gap-3 mb-5">
-                            <i className="fas fa-graduation-cap text-3xl text-blue-400"></i>
-                            <h3 className="text-3xl font-bold">Education</h3>
-                        </div>
-                        <div className="space-y-3">
-                            <h4 className="text-xl font-semibold text-white">B.Tech CSE (AI & ML)</h4>
-                            <p className="text-blue-300">Noida Institute of Engineering and Technology, Greater Noida</p>
-                            <p className="text-gray-400"><i className="far fa-calendar-alt mr-2"></i>Aug 2021 - June 2025</p>
-                            <p className="text-gray-300 mt-4">Specialization in Artificial Intelligence & Machine Learning, coursework in Deep Learning, Data Structures, and Full-Stack Development.</p>
-                        </div>
-                    </div>
-                    {/* Contact & Download Resume */}
-                    <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 shadow-xl flex flex-col justify-between">
-                        <div>
-                            <div className="flex items-center gap-3 mb-6">
-                                <i className="fas fa-envelope-open-text text-3xl text-cyan-400"></i>
-                                <h3 className="text-3xl font-bold">Get In Touch</h3>
-                            </div>
-                            <p className="text-gray-300 mb-6">Looking for innovative opportunities in full-stack development or AI-driven solutions. Let's collaborate!</p>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-4 text-gray-200">
-                                    <i className="fas fa-envelope w-6 text-blue-400"></i>
-                                    <span>mohit.johri@example.com</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-gray-200">
-                                    <i className="fas fa-phone-alt w-6 text-blue-400"></i>
-                                    <span>+91 98765 43210</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-gray-200">
-                                    <i className="fab fa-linkedin w-6 text-blue-400"></i>
-                                    <span>linkedin.com/in/mohit-johri</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mt-8">
-                            <button className="w-full bg-blue-600 hover:bg-blue-500 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-3 text-lg">
-                                <i className="fas fa-download"></i> Download Resume (PDF)
-                            </button>
-                            <p className="text-xs text-gray-400 text-center mt-3">*Updated March 2026 — Software Developer</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        );
-    };
-
-    // Footer
-    const Footer = () => (
-        <footer className="border-t border-slate-800 py-8 text-center text-gray-500 text-sm">
-            <p>© 2026 Mohit Johri — Built with React + Tailwind CSS | Passionate about clean code & AI innovation</p>
-        </footer>
-    );
-
-    // Main App Component
-    const App = () => {
-        useEffect(() => {
-            // smooth scroll for anchor links (optional, already done with CSS)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-        }, []);
-        return (
-            <div className="bg-slate-900 text-gray-100">
-                <Navigation />
-                <main className="pt-16">
-                    <Hero />
-                    <Experience />
-                    <Projects />
-                    <Skills />
-                    <Contact />
-                </main>
-                <Footer />
+            <div class="project-card">
+                <h3>Real-Time Object Detection</h3>
+                <p>Developed a live detection system using <strong>YOLO</strong> and TensorFlow/PyTorch, optimized for real-time performance with OpenCV[cite: 29, 30].</p>
             </div>
-        );
-    };
+        </div>
+    </section>
 
-    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-</script>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="experience-card">
+            <h3>B.Tech in Computer Science & Engineering (AI & ML)</h3>
+            <p>Noida Institute of Engineering and Technology | 2021 - 2025 </p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Mohit Johri | Phone: 7078357999 [cite: 2]</p>
+</footer>
+
 </body>
 </html>
