@@ -635,6 +635,14 @@
         const indicator = document.getElementById('dayIndicator');
         let currentIndex = 0;
 
+        // Automatically set to current day of the week
+        const dayOfWeek = new Date().getDay(); // 0=Sunday, 1=Monday, ..., 6=Saturday
+        if (dayOfWeek === 0) {
+            currentIndex = 6; // Sunday: Rest day
+        } else {
+            currentIndex = dayOfWeek - 1; // Monday=0, Tuesday=1, ..., Saturday=5
+        }
+
         function updatePageView() {
             pages.forEach((page, index) => {
                 page.style.display = index === currentIndex ? '' : 'none';
