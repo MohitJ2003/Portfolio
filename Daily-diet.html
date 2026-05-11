@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Diet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #1a1a1a;
+        }
+
+        h1 {
+            color: #1a252f;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .controls button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .controls button:hover {
+            background-color: #1d6fa5;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: medium;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 3px solid greenyellow;
+            background: white;
+
+        }
+
+        th,
+        td {
+            border: 1px solid greenyellow;
+            padding: 12px 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td[contenteditable] {
+            background-color: #fffbe6;
+        }
+
+        .action-button {
+            background: #27ae60;
+            border: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 6px;
+        }
+
+        .action-button.delete {
+            background: #e74c3c;
+        }
+
+        .action-cell {
+            white-space: nowrap;
+        }
+
+        .id-cell {
+            font-family: monospace;
+            color: #555;
+            background: #f7f9fc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Daily Diet</h1>
+
+    <table id="dietTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Protein Source Name</th>
+                <th>Protein per 100 gram</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="id-cell">id-1</td>
+                <td contenteditable="true">SoyaBean Dal</td>
+                <td contenteditable="true">36.2 gram</td>
+                <td class="action-cell"><button class="action-button delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="id-cell">id-2</td>
+                <td contenteditable="true">Chickpeas / Grams</td>
+                <td contenteditable="true">19.3 gram</td>
+                <td class="action-cell"><button class="action-button delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="id-cell">id-3</td>
+                <td contenteditable="true">Oats</td>
+                <td contenteditable="true">16.9 gram</td>
+                <td class="action-cell"><button class="action-button delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="id-cell">id-4</td>
+                <td contenteditable="true">Peanuts</td>
+                <td contenteditable="true">25.8 gram</td>
+                <td class="action-cell"><button class="action-button delete">Delete</button></td>
+            </tr>
+            <tr>
+                <td class="id-cell">id-5</td>
+                <td contenteditable="true">Paneer</td>
+                <td contenteditable="true">18.0 gram</td>
+                <td class="action-cell"><button class="action-button delete">Delete</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td><strong>Total</strong></td>
+                <td id="totalCell"><strong>0 gram</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

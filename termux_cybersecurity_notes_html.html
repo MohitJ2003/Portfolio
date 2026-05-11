@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity & Ethical Hacking (Termux)</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #38bdf8;
+}
+
+.section {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #1e293b;
+}
+
+ul {
+  line-height: 1.6;
+}
+
+.code-box {
+  background: #020617;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+code {
+  color: #22c55e;
+}
+
+button {
+  background: #38bdf8;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+</style>
+</head>
+<body>
+
+<h1>Cybersecurity & Ethical Hacking using Termux</h1>
+
+<div class="section">
+<h2>Setup Commands</h2>
+<ul>
+<li>Update & Upgrade</li>
+<div class="code-box"><code>pkg update && pkg upgrade</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Git</li>
+<div class="code-box"><code>pkg install git</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Python</li>
+<div class="code-box"><code>pkg install python</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Nmap</li>
+<div class="code-box"><code>pkg install nmap</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Curl</li>
+<div class="code-box"><code>pkg install curl</code><button onclick="copy(this)">Copy</button></div>
+</ul>
+</div>
+
+<div class="section">
+<h2>Tools Usage</h2>
+<ul>
+<li>Nmap Scan</li>
+<div class="code-box"><code>nmap -sV &lt;target-ip&gt;</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Nikto</li>
+<div class="code-box"><code>pkg install nikto</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Run Nikto</li>
+<div class="code-box"><code>nikto -h http://example.com</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install Hydra</li>
+<div class="code-box"><code>pkg install hydra</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Install theHarvester</li>
+<div class="code-box"><code>git clone https://github.com/laramies/theHarvester</code><button onclick="copy(this)">Copy</button></div>
+
+<li>Run theHarvester</li>
+<div class="code-box"><code>python3 theHarvester.py -d example.com -b google</code><button onclick="copy(this)">Copy</button></div>
+</ul>
+</div>
+
+<div class="section">
+<h2>Learning Roadmap</h2>
+<ul>
+<li>Linux Basics</li>
+<li>Networking (IP, DNS, Ports)</li>
+<li>Web Basics (HTTP, HTML, JS)</li>
+<li>Cyber Attacks (SQLi, XSS, Brute Force)</li>
+<li>Python Scripting</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Important Notes</h2>
+<ul>
+<li>Use tools only on your own systems</li>
+<li>Practice on legal platforms like TryHackMe</li>
+<li>Unauthorized hacking is illegal</li>
+</ul>
+</div>
+
+<script>
+function copy(btn) {
+  const text = btn.previousElementSibling.innerText;
+  navigator.clipboard.writeText(text);
+  btn.innerText = "Copied!";
+  setTimeout(() => btn.innerText = "Copy", 1500);
+}
+</script>
+
+</body>
+</html>
